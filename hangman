@@ -1,0 +1,1 @@
+secret_word = input("Player 1: input a word/phrase for Player 2 to guess! ")
