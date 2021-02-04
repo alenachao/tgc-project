@@ -31,7 +31,7 @@ def print_after_guess(correctness):
     else:
         print(correctness + "! Incorrect Guesses:" + incorrect_guesses)
 
-    # printing stick man based on strikes
+    # optional: printing stick man based on strikes
     if strikes == 0:
         picture = """
  |  T
