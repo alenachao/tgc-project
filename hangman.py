@@ -19,18 +19,19 @@ If the stick man is fully drawn, P1 wins. If P2 guesses the word, P2 wins. Good 
 print(welcome)
 
 input("Press enter to start")
-secret = input("P1: input a word or phrase for P2 to guess! ").upper()
+secret = input("P1: input a word or phrase for P2 to guess! ").upper() # so guesses are not case sensitive
 print("\n"*20)
 correct_guesses = ' '
 incorrect_guesses = ' '
 strikes = 0
 
 def print_after_guess(correctness):
-    if correctness == "skip":
+    if correctness == "skip": # for when it prints before P2 has guessed
         pass
     else:
         print(correctness + "! Incorrect Guesses:" + incorrect_guesses)
 
+    # printing stick man based on strikes
     if strikes == 0:
         picture = """
  |  T
@@ -84,7 +85,8 @@ ___/ \\
         print("P1 wins! The word/phrase was " + secret)
         return
     print(picture)
-
+    
+    #if letter in SECRET has been guessed by P2, it will be printed. Otherwise _ will be printed
     for letter in secret:
         if letter == " ":
             print(" ", end = " ")
