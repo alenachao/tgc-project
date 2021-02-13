@@ -17,9 +17,15 @@ If the stick man is fully drawn, P1 wins. If P2 guesses the word, P2 wins. Good 
 * * * * * * * * * * * * * * *
 """
 print(welcome)
-
 input("Press enter to start")
-secret = input("P1: input a word or phrase for P2 to guess! ").upper() # so guesses are not case sensitive
+
+while True:
+    secret = input("P1: input a word or phrase for P2 to guess! ").upper() # so guesses are not case sensitive
+    if all(x.isalpha() or x.isspace() for x in secret): # checks if word/phrase only contains letters and spaces
+        break
+    else:
+        print("Word or phrase must only contain letters and spaces!")
+
 print("\n"*20)
 correct_guesses = ' '
 incorrect_guesses = ' '
@@ -98,7 +104,12 @@ ___/ \\
 print_after_guess("skip")
 while strikes < 6:
     print("\n")
-    guess = input("P2: guess a letter or the word/phrase if you think you know it: ").upper()
+    while True:
+        guess = input("P2: guess a letter or the word/phrase if you think you know it: ").upper()
+        if all(x.isalpha() or x.isspace() for x in guess):
+            break
+        else:
+            print("guess must be only contain letters and spaces!")
     if len(guess) == 1:
         if secret.find(guess) == -1:
             incorrect_guesses += guess + " "
