@@ -35,14 +35,14 @@ for i in range(10):
 
     # Checking if player X or O has won
     if count >= 5:
-        if Board['7'] == Board['8'] == Board['9'] != ' ' or \ # bottom row
-            Board['4'] == Board['5'] == Board['6'] != ' ' or \ # middle row
-            Board['1'] == Board['2'] == Board['3'] != ' ' or \ # top row
-            Board['1'] == Board['4'] == Board['7'] != ' ' or \ # first column
-            Board['2'] == Board['5'] == Board['8'] != ' ' or \ # second column
-            Board['3'] == Board['6'] == Board['9'] != ' ' or \ # third column
-            Board['7'] == Board['5'] == Board['3'] != ' ' or \ # diagonal
-            Board['1'] == Board['5'] == Board['9'] != ' ': # diagonal
+        if Board['7'] == Board['8'] == Board['9'] != ' ' or \
+            Board['4'] == Board['5'] == Board['6'] != ' ' or \ 
+            Board['1'] == Board['2'] == Board['3'] != ' ' or \
+            Board['1'] == Board['4'] == Board['7'] != ' ' or \ 
+            Board['2'] == Board['5'] == Board['8'] != ' ' or \ 
+            Board['3'] == Board['6'] == Board['9'] != ' ' or \
+            Board['7'] == Board['5'] == Board['3'] != ' ' or \ 
+            Board['1'] == Board['5'] == Board['9'] != ' ': 
             print("Game Over, Player " + turn + " won!")
             break
 
